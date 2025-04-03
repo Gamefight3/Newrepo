@@ -1,0 +1,6 @@
+<h3>Available Time Slots</h3>
+<select id="time-select" name="time">
+    {% for slot in available_slots %}
+        <option value="{{ slot }}">{{ slot }}</option>
+    {% endfor %}
+</select>

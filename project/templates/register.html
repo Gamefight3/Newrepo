@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome to Our Photography Studio{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero" style="height: 200px; background-color: #f0f0f0;">
+        <div class="hero-content">
+            <h1>Register Now</h1>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="intro">
+        <h2>Create Your Account</h2>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" autofocus class="form-control mx-auto w-auto"  id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm" name="confirm" required>
+            </div>
+            <button type="submit" class="cta-button">Register</button>
+        </form>
+    </section>
+    {% endblock %}
+

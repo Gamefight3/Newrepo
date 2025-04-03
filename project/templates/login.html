@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome to Our Photography Studio{% endblock %}
+
+{% block content %}
+
+    <!-- Login Form Section -->
+    <section class="intro">
+        <h2>Enter Your Credentials</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" autofocus class="form-control mx-auto w-auto" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="cta-button">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+    </section>
+    {% endblock %}

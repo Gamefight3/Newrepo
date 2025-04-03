@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="confirmation">
+        <h1>Booking Confirmed!</h1>
+        <p>{{ message }}</p>
+        <p>Client: {{ username }}</p>
+        <p>Session Time: {{ event_time.strftime('%B %d, %Y, %I:%M %p') if event_time else 'Not specified' }}</p>
+    </div>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

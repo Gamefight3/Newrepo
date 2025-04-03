@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+{% extends "layout.html" %}
+
+{% block title %}Welcome to Our Photography Studio{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Photography Studio</h1>
+            <p>Capturing life's precious moments with passion and creativity.</p>
+            {% if session.get('logged_in') %}
+                <p>Welcome back, {{ session.get('user_name') }}! Ready to book your session?</p>
+                <a href="{{ url_for('create_appointment') }}" class="cta-button">Book Now</a>
+            {% else %}
+                <p>Please sign in to book your appointment</p>
+                <a href="{{ url_for('auth') }}" class="cta-button">Sign in with Google</a>
+            {% endif %}
+        </div>
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hero Image" class="hero-image">
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <h2>About Us</h2>
+        <p>We are a team of professional photographers dedicated to providing exceptional service and stunning visuals. Our passion is to tell your story through photographs that will be cherished for generations.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-grid">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=1" alt="Portfolio Image 1">
+            <img src="https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=1" alt="Portfolio Image 2">
+            <img src="https://images.pexels.com/photos/3062545/pexels-photo-3062545.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=1" alt="Portfolio Image 3">
+            <img src="https://images.pexels.com/photos/3062542/pexels-photo-3062542.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=1" alt="Portfolio Image 4">
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Ready to Capture Your Moment?</h2>
+        <a href="{{ url_for('create_appointment') }}" class="cta-button">Schedule Now</a>
+    </section>
+{% endblock %}
